@@ -27,9 +27,17 @@ module.exports = {
     }
   },
   // #010204
-  getRandom : () => {
-    return Math.random()*10
-
+  // #010205
+  getRandom : (num1, num2) => {
+    if(num1 && num2){
+      if(typeof num1 == 'number' && typeof num2 == 'number'){
+        let number = Math.random()*(num2 - num1)+ num1
+        return number
+      }
+    }
+    else if(!num1 && !num2){
+      return Math.random()*10
+    }
   }
 
 }
