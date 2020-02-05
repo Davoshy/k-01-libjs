@@ -105,7 +105,15 @@ module.exports = {
       nameArray.push(object.name)
     })
     return nameArray
-  }
+  },
 
+  // #010404
+  selectProperty : (array, string) => {
+    let newArray = []
+    array.forEach(object => {
+      newArray.push({[string]:object[string]})
+    })
+    return newArray
+  }
 
 }
