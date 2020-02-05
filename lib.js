@@ -91,6 +91,11 @@ module.exports = {
   // #010401
   getKeys : (obj) => {
     return Object.keys(obj)
+  },
+
+  // #010402
+  getValues : (obj) => {
+    return Object.values(obj)
   }
 
 }
