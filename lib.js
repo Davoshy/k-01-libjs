@@ -25,6 +25,11 @@ module.exports = {
     else {
       return NaN
     }
+  },
+  // #010204
+  getRandom : () => {
+    return Math.random()*10
+
   }
 
 }
