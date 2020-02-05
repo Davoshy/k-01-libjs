@@ -1,6 +1,7 @@
 module.exports = {
-  // #010201
+  // #010202
   toSquare : (arrayNum) => {
+    if(typeof arrayNum == 'object'){
     let newArray = []
       arrayNum.forEach(element => {
         if(typeof element == 'number'){
@@ -8,5 +9,13 @@ module.exports = {
         }
       })
       return newArray
-  }
+    }
+    if(typeof arrayNum == 'number'){
+      return arrayNum * arrayNum
+    }
+    else {
+      return NaN
+    }
+  },
+
 }
