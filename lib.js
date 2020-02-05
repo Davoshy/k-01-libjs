@@ -96,6 +96,16 @@ module.exports = {
   // #010402
   getValues : (obj) => {
     return Object.values(obj)
+  },
+
+  // #010403
+  getNames : (array) => {
+    let nameArray = []
+    array.forEach(object => {
+      nameArray.push(object.name)
+    })
+    return nameArray
   }
+
 
 }
