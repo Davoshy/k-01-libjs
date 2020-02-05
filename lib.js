@@ -38,6 +38,19 @@ module.exports = {
     else if(!num1 && !num2){
       return Math.random()*10
     }
+  },
+
+  // #010206
+  getSum : (array) => {
+    let newArray = []
+    const reducer = (accumulator, currentValue) => accumulator + currentValue
+    array.forEach(element => {
+      if(typeof element == 'number'){
+        newArray.push(element)
+      }
+    })
+    return newArray.reduce(reducer)
+
   }
 
 }
