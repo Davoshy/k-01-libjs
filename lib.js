@@ -65,9 +65,16 @@ module.exports = {
   },
 
   // #010302
+  // #010303
   getGreaterThan : (array, base) => {
-    const newArray = array.filter(number => number > base)
-    return newArray
+    if(typeof array[0]== 'number'){
+      const newArray = array.filter(number => number > base)
+      return newArray
+    }
+    else if(typeof array[0] == 'string'){
+      const newArray = array.filter(string => string.length > base)
+      return newArray
+    }
   }
 
 }
