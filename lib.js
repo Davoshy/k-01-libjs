@@ -51,6 +51,17 @@ module.exports = {
     })
     return newArray.reduce(reducer)
 
+  },
+
+  // #010301
+  getNumbers : (array) => {
+    let numArray = []
+    array.forEach(element => {
+      if(typeof element == 'number'){
+        numArray.push(element)
+      }
+    })
+    return numArray
   }
 
 }
