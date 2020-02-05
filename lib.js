@@ -114,6 +114,16 @@ module.exports = {
       newArray.push({[string]:object[string]})
     })
     return newArray
+  },
+
+  // #010405
+  deleteProperty : (array, string) => {
+    let newArray =[]
+    array.forEach(object => {
+      delete object[string]
+      newArray.push(object)
+    })
+    return newArray
   }
 
 }
