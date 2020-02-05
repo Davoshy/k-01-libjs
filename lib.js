@@ -75,6 +75,17 @@ module.exports = {
       const newArray = array.filter(string => string.length > base)
       return newArray
     }
+  },
+
+  // #010304
+  getEven : (array) => {
+    let newArray = []
+    array.forEach(number => {
+      if(number % 2 == 0){
+        newArray.push(number)
+      }
+    })
+    return newArray
   }
 
 }
