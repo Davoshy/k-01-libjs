@@ -86,6 +86,11 @@ module.exports = {
       }
     })
     return newArray
+  },
+
+  // #010401
+  getKeys : (obj) => {
+    return Object.keys(obj)
   }
 
 }
