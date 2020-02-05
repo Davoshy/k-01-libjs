@@ -62,6 +62,12 @@ module.exports = {
       }
     })
     return numArray
+  },
+
+  // #010302
+  getGreaterThan : (array, base) => {
+    const newArray = array.filter(number => number > base)
+    return newArray
   }
 
 }
