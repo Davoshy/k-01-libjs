@@ -17,5 +17,14 @@ module.exports = {
       return NaN
     }
   },
+  // #010203
+  toPower : (base, power) => {
+    if(typeof base == 'number' && typeof power == 'number' ){
+      return Math.pow(base, power)
+    }
+    else {
+      return NaN
+    }
+  }
 
 }
