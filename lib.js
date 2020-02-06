@@ -133,6 +133,15 @@ module.exports = {
       newArray.push({'name':array1[index].name, 'age':array2[index].age})
     })
     return newArray
+  },
+
+  // #010407
+  flipWords : string => {
+    let newString = string.split(' ')
+    let reverseArray = newString.reverse()
+    let finalString = reverseArray.join(' ')
+    return finalString
   }
+
 
 }
