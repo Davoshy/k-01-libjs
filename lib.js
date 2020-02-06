@@ -1,158 +1,121 @@
 module.exports = {
   // #010202
-  toSquare : (arrayNum) => {
-    if(typeof arrayNum == 'object'){
-    let newArray = []
-      arrayNum.forEach(element => {
-        if(typeof element == 'number'){
-          newArray.push(element * element)
-        }
-      })
-      return newArray
+  toSquare: arrayNum => {
+    if (typeof arrayNum == "object") {
+      return arrayNum.map(number => number * number);
     }
-    if(typeof arrayNum == 'number'){
-      return arrayNum * arrayNum
-    }
-    else {
-      return NaN
+    if (typeof arrayNum == "number") {
+      return arrayNum * arrayNum;
+    } else {
+      return NaN;
     }
   },
+
   // #010203
-  toPower : (base, power) => {
-    if(typeof base == 'number' && typeof power == 'number' ){
-      return Math.pow(base, power)
-    }
-    else {
-      return NaN
-    }
+  toPower: (base, power) => {
+    return typeof base == "number" && typeof power == "number"
+      ? Math.pow(base, power)
+      : NaN;
   },
   // #010204
   // #010205
-  getRandom : (num1, num2) => {
-    if(num1 && num2){
-      if(typeof num1 == 'number' && typeof num2 == 'number'){
-        let number = Math.random()*(num2 - num1)+ num1
-        return number
+  getRandom: (num1, num2) => {
+    if (num1 && num2) {
+      if (typeof num1 == "number" && typeof num2 == "number") {
+        let number = Math.random() * (num2 - num1) + num1;
+        return number;
       }
-    }
-    else if(!num1 && !num2){
-      return Math.random()*10
+    } else if (!num1 && !num2) {
+      return Math.random() * 10;
     }
   },
 
   // #010206
-  getSum : (array) => {
-    let newArray = []
-    const reducer = (accumulator, currentValue) => accumulator + currentValue
-    array.forEach(element => {
-      if(typeof element == 'number'){
-        newArray.push(element)
-      }
-    })
-    return newArray.reduce(reducer)
-
+  getSum: array => {
+    return array
+      .filter(element => typeof element == "number")
+      .reduce((a, b) => a + b);
   },
 
   // #010301
-  getNumbers : (array) => {
-    let numArray = []
-    array.forEach(element => {
-      if(typeof element == 'number'){
-        numArray.push(element)
-      }
-    })
-    return numArray
+  getNumbers: array => {
+    return array.filter(element => typeof element == "number");
   },
 
   // #010302
   // #010303
-  getGreaterThan : (array, base) => {
-    if(typeof array[0]== 'number'){
-      const newArray = array.filter(number => number > base)
-      return newArray
-    }
-    else if(typeof array[0] == 'string'){
-      const newArray = array.filter(string => string.length > base)
-      return newArray
-    }
+  getGreaterThan: (array, base) => {
+    let newArray = [];
+    array.forEach(element => {
+      if (typeof element == "number") {
+        if (element > base) {
+          newArray.push(element);
+        }
+      } else if (typeof element == "string") {
+        if (element.length > base) {
+          newArray.push(element);
+        }
+      }
+    });
+    return newArray;
   },
 
   // #010304
-  getEven : (array) => {
-    let newArray = []
-    array.forEach(number => {
-      if(number % 2 == 0){
-        newArray.push(number)
-      }
-    })
-    return newArray
-  },
+  getEven: array => array.filter(element => element % 2 == 0),
 
   // #010401
-  getKeys : (obj) => {
-    return Object.keys(obj)
-  },
+  getKeys: obj => Object.keys(obj),
 
   // #010402
-  getValues : (obj) => {
-    return Object.values(obj)
-  },
+  getValues: obj => Object.values(obj),
 
   // #010403
-  getNames : (array) => {
-    let nameArray = []
-    array.forEach(object => {
-      nameArray.push(object.name)
-    })
-    return nameArray
-  },
+  getNames: array => array.map(object => object.name),
 
   // #010404
-  selectProperty : (array, string) => {
-    let newArray = []
+  selectProperty: (array, string) => {
+    let newArray = [];
     array.forEach(object => {
-      newArray.push({[string]:object[string]})
-    })
-    return newArray
+      newArray.push({ [string]: object[string] });
+    });
+    return newArray;
   },
 
   // #010405
-  deleteProperty : (array, string) => {
-    let newArray =[]
+  deleteProperty: (array, string) => {
+    let newArray = [];
     array.forEach(object => {
-      delete object[string]
-      newArray.push(object)
-    })
-    return newArray
+      delete object[string];
+      newArray.push(object);
+    });
+    return newArray;
   },
 
   // #010406
-  merge : (array1, array2) => {
-    let newArray = []
+  merge: (array1, array2) => {
+    let newArray = [];
     array1.forEach((element, index) => {
-      newArray.push({'name':array1[index].name, 'age':array2[index].age})
-    })
-    return newArray
+      newArray.push({ name: array1[index].name, age: array2[index].age });
+    });
+    return newArray;
   },
 
   // #010407
-  flipWords : string => {
-    let newString = string.split(' ')
-    let reverseArray = newString.reverse()
-    let finalString = reverseArray.join(' ')
-    return finalString
+  flipWords: string => {
+    let newString = string.split(" ");
+    let reverseArray = newString.reverse();
+    let finalString = reverseArray.join(" ");
+    return finalString;
   },
 
   // #010408
-  search : (array, word) => {
-    let newArray =[]
+  search: (array, word) => {
+    let newArray = [];
     array.forEach(string => {
-      if(string.includes(word)){
-        newArray.push(string)
+      if (string.includes(word)) {
+        newArray.push(string);
       }
-    })
-    return newArray
+    });
+    return newArray;
   }
-
-
-}
+};
