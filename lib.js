@@ -74,30 +74,24 @@ module.exports = {
 
   // #010404
   selectProperty: (array, string) => {
-    let newArray = [];
-    array.forEach(object => {
-      newArray.push({ [string]: object[string] });
+    return array.map(object => {
+      return { [string]: object[string] };
     });
-    return newArray;
   },
 
   // #010405
   deleteProperty: (array, string) => {
-    let newArray = [];
-    array.forEach(object => {
+    return array.map(object => {
       delete object[string];
-      newArray.push(object);
+      return object;
     });
-    return newArray;
   },
 
   // #010406
   merge: (array1, array2) => {
-    let newArray = [];
-    array1.forEach((element, index) => {
-      newArray.push({ name: array1[index].name, age: array2[index].age });
+    return array1.map((object, index) => {
+      return { name: object.name, age: array2[index].age };
     });
-    return newArray;
   },
 
   // #010407
