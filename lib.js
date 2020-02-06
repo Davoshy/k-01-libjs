@@ -124,6 +124,15 @@ module.exports = {
       newArray.push(object)
     })
     return newArray
+  },
+
+  // #010406
+  merge : (array1, array2) => {
+    let newArray = []
+    array1.forEach((element, index) => {
+      newArray.push({'name':array1[index].name, 'age':array2[index].age})
+    })
+    return newArray
   }
 
 }
