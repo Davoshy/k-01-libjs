@@ -141,6 +141,17 @@ module.exports = {
     let reverseArray = newString.reverse()
     let finalString = reverseArray.join(' ')
     return finalString
+  },
+
+  // #010408
+  search : (array, word) => {
+    let newArray =[]
+    array.forEach(string => {
+      if(string.includes(word)){
+        newArray.push(string)
+      }
+    })
+    return newArray
   }
 
 
